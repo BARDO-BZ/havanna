@@ -1,0 +1,434 @@
+:root {
+  --navy: #00212e;
+  --navy-deep: #050606;
+  --grey: #eaeaea;
+  --white: #ffffff;
+  --gold: #c9b26a;
+  --gold-soft: #b5a564;
+  --gold-band: linear-gradient(
+    90deg,
+    #93814a 0%,
+    #c8b873 28%,
+    #e9db88 50%,
+    #c8b873 72%,
+    #a69556 100%
+  );
+  --gold-metal: linear-gradient(
+    160deg,
+    #7e6e3c 0%,
+    #e9db88 38%,
+    #fbf3c0 50%,
+    #d8c77b 62%,
+    #8a7942 100%
+  );
+  --content: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.coming-soon {
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: var(--gold);
+  margin-top: 50px;
+}
+
+.wrap {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-slot {
+  position: relative;
+  background: #11222d;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.04) 50%,
+    rgba(255, 255, 255, 0.04) 75%,
+    transparent 75%
+  );
+  background-size: 28px 28px;
+  border: 1px dashed rgba(201, 178, 106, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(201, 178, 106, 0.7);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.img-slot span {
+  padding: 8px 12px;
+}
+
+.logo-havanna {
+  width: 150px;
+  padding-bottom: 20px;
+}
+
+.logo-havanna-messi {
+  width: 125px;
+  padding-bottom: 20px;
+}
+
+.x-mark {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+.x-mark path {
+  fill: var(--gold);
+}
+
+.leo-mark {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  text-align: center;
+  height: 100vh;
+}
+.lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.lockup img {
+  height: 300px;
+}
+
+.hero-copy {
+  max-width: 660px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.hero-copy p {
+  color: var(--gold-soft);
+  font-weight: 300;
+  font-size: 18px;
+}
+.hero-copy .light {
+  color: var(--white);
+}
+.hero-copy .light b {
+  font-weight: 700;
+}
+
+/* BANDA DORADA + VIDEO */
+.band {
+  background: var(--gold-band);
+  padding: 46px 0;
+  position: relative;
+}
+.band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    60% 120% at 50% 50%,
+    rgba(255, 255, 255, 0.35),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.band .x-mark {
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.band img {
+  width: 31px;
+  margin: 0 auto;
+}
+.band .x-mark path {
+  fill: var(--navy);
+}
+.video-card {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 26px auto;
+  background: var(--navy);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+.video-bar {
+  padding: 14px 22px;
+  font-size: 16px;
+  color: var(--white);
+  background: var(--navy);
+}
+.video-frame {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* PRODUCTO */
+.product {
+  background: var(--navy);
+  position: relative;
+  min-height: 600px;
+  background-image:
+    url("./recursos/Misc/messi.png"), url("./recursos/Misc/foco.png");
+  background-size: contain, contain;
+  background-position:
+    left,
+    55% 10%;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+}
+
+.product-col {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 50px 0;
+}
+
+.pack-img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.alfajor-img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.product-button {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: none;
+  background: var(--gold-metal);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+/* GRILLA DE ALFAJORES */
+.collection {
+  background: var(--grey);
+  color: var(--navy);
+  padding: 70px 0 90px;
+  text-align: center;
+}
+.collection h2 {
+  font-weight: 900;
+  font-size: 40px;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+}
+.collection h2 span {
+  display: block;
+  font-weight: 400;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px 10px;
+  margin-top: 56px;
+}
+.wrapper {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper img {
+  width: 80%;
+  height: 100%;
+  padding: 0 10px;
+  object-fit: contain;
+  display: block;
+}
+
+.wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 50px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  border-radius: 50%;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  padding: 64px 0 56px;
+}
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-direction: row;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.social a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 300;
+  font-size: 16px;
+}
+.social svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--white);
+  flex: 0 0 auto;
+}
+.foot-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.foot-center .leo-mark {
+  width: 54px;
+  margin: 6px 0 18px;
+}
+.foot-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-weight: 300;
+}
+.foot-contact h4 {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+.foot-contact p {
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.foot-phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 6px;
+}
+.foot-phone svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 1.6;
+}
+
+@media (max-width: 900px) {
+  .havanna-word {
+    font-size: 54px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .messi-photo {
+    min-height: 300px;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .collection h2 {
+    font-size: 28px;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-grid {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .social a,
+  .foot-center,
+  .foot-links {
+    align-items: center;
+    justify-content: center;
+  }
+  .foot-phone {
+    justify-content: center;
+  }
+}
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
