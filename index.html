@@ -67,7 +67,7 @@
 
     <!-- PRODUCTO -->
     <section class="product" id="ficha">
-      <div class="product-col"></div>
+      <div class="product-col none"></div>
       <div class="product-col">
         <img class="pack-img" src="./recursos/Misc/Pack.png" alt="" />
         <button class="product-button" type="button">Ver ficha técnica</button>
@@ -192,8 +192,14 @@
 
         <div class="footer-col">
           <img
-            class="logo-havanna-messi"
+            class="logo-havanna-messi desktop"
             src="./recursos/Misc/Logo-Messi.png"
+            alt="Havanna"
+          />
+
+          <img
+            class="logo-havanna-messi mobile"
+            src="./recursos/Misc/Logo-Messi-Horizontal.png"
             alt="Havanna"
           />
 
@@ -227,6 +233,19 @@
       </div>
     </footer>
 
+    <!-- MODAL FICHA TÉCNICA -->
+    <dialog id="modal-ficha" class="modal-overlay" aria-label="Ficha técnica">
+      <div class="modal-box">
+        <button type="button" class="modal-close" aria-label="Cerrar">
+          &times;
+        </button>
+        <img
+          src="./recursos/Misc/Ficha-Tecnica-HavannaxMessi.jpg"
+          alt="Ficha técnica Havanna x LEO"
+        />
+      </div>
+    </dialog>
+
     <script>
       var grid = document.getElementById("grid");
       for (var i = 1; i <= 15; i++) {
@@ -241,6 +260,22 @@
           '" />';
         grid.appendChild(d);
       }
+
+      var modal = document.getElementById("modal-ficha");
+      var btnFicha = document.querySelector(".product-button");
+      var btnClose = document.querySelector(".modal-close");
+
+      btnFicha.addEventListener("click", function () {
+        modal.showModal();
+      });
+
+      btnClose.addEventListener("click", function () {
+        modal.close();
+      });
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) modal.close();
+      });
     </script>
   </body>
 </html>
