@@ -259,6 +259,13 @@ a {
   background: var(--gold-metal);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  color: var(--navy);
+}
+
+.product-button,
+.product-button a,
+.product-button:visited {
+  color: var(--navy);
 }
 
 /* GRILLA DE ALFAJORES */
