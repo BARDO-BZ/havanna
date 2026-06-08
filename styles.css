@@ -123,6 +123,7 @@ a {
   background: var(--navy);
   text-align: center;
   height: 100vh;
+  max-height: 780px;
 }
 .lockup {
   display: flex;
