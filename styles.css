@@ -351,7 +351,6 @@ a {
 }
 .wrapper:hover {
   transform: scale(1.3);
-  /* box-shadow: 0 32px 40px -10px rgba(0, 0, 0, 0.45); */
   z-index: 2;
 }
 
@@ -702,14 +701,7 @@ footer {
 
   .hero {
     height: auto;
-    /* max-height: unset; */
-    /* padding-bottom: 50px; */
-    /* height: 100vh; */
-    /* max-height: 780px; */
     background-image: unset;
-    /* background-size: 60%; */
-    /* background-position: bottom left; */
-    /* background-repeat: no-repeat; */
   }
 
   .wrap-hero {
@@ -734,5 +726,9 @@ footer {
   .logo-havanna .desktop,
   .logo-havanna-messi .mobile {
     display: none;
+  }
+
+  .wrapper img {
+    padding: 10px 10px;
   }
 }
