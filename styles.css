@@ -335,6 +335,7 @@ a {
   grid-template-columns: repeat(5, 1fr);
   gap: 28px 10px;
   margin-top: 56px;
+  padding-bottom: 50px;
 }
 .wrapper {
   position: relative;
@@ -376,6 +377,22 @@ a {
     rgba(0, 0, 0, 0) 70%
   );
   border-radius: 50%;
+}
+
+.buy-button {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: none;
+  background: var(--gold-metal);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  color: var(--navy);
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 /* FOOTER */
@@ -730,5 +747,22 @@ footer {
 
   .wrapper img {
     padding: 10px 10px;
+  }
+
+  .buy-button {
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 24px;
+    border: none;
+    background: var(--gold-metal);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    color: var(--navy);
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .collection {
+    padding: 70px 0 50px;
+    text-align: center;
   }
 }
