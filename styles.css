@@ -189,7 +189,7 @@ a {
 
 .band-leo {
   background: var(--gold-band);
-  padding: 20px 0;
+  padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -361,12 +361,13 @@ a {
   padding: 0 10px;
   object-fit: contain;
   display: block;
+  z-index: 2;
 }
 
 .wrapper::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -377,6 +378,7 @@ a {
     rgba(0, 0, 0, 0) 70%
   );
   border-radius: 50%;
+  z-index: 1;
 }
 
 .buy-button {
@@ -475,7 +477,7 @@ footer {
   display: none;
 }
 
-/* MODAL FICHA TÉCNICA */
+/* MODALES */
 .modal-overlay {
   border: none;
   padding: 0;
@@ -523,6 +525,28 @@ footer {
   justify-content: center;
   z-index: 1;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.modal-overlay--alfajor {
+  background: transparent;
+}
+
+.modal-box--alfajor {
+  max-width: 420px;
+}
+
+.modal-box--alfajor img {
+  width: 70%;
+  /* background: var(--navy); */
+}
+
+.wrapper.is-clickable {
+  cursor: pointer;
+}
+
+.wrapper.is-clickable:hover img {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
 
 @media (max-width: 900px) {

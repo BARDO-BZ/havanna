@@ -117,8 +117,13 @@
       </div>
       <div class="product-col">
         <img
-          class="alfajor-img"
-          src="./recursos/Misc/PlacaTransparente-06.png"
+          class="alfajor-img desktop"
+          src="./recursos/Misc/alfajor-desktop.png"
+          alt=""
+        />
+        <img
+          class="alfajor-img mobile"
+          src="./recursos/Misc/alfajor-mobile.png"
           alt=""
         />
       </div>
@@ -305,6 +310,16 @@
       </div>
     </dialog>
 
+    <!-- MODAL ALFAJOR -->
+    <dialog id="modal-alfajor" class="modal-overlay modal-overlay--alfajor" aria-label="Ver alfajor">
+      <div class="modal-box modal-box--alfajor">
+        <button type="button" class="modal-close" aria-label="Cerrar">
+          &times;
+        </button>
+        <img src="" alt="Alfajor Havanna x LEO" />
+      </div>
+    </dialog>
+
     <script>
       var grid = document.getElementById("grid");
       for (var i = 1; i <= 15; i++) {
@@ -320,20 +335,32 @@
         grid.appendChild(d);
       }
 
-      var modal = document.getElementById("modal-ficha");
-      var btnFicha = document.querySelector(".product-button");
-      var btnClose = document.querySelector(".modal-close");
-
-      btnFicha.addEventListener("click", function () {
-        modal.showModal();
+      // Modal ficha técnica
+      var modalFicha = document.getElementById("modal-ficha");
+      document.querySelector(".product-button").addEventListener("click", function () {
+        modalFicha.showModal();
+      });
+      modalFicha.querySelector(".modal-close").addEventListener("click", function () {
+        modalFicha.close();
+      });
+      modalFicha.addEventListener("click", function (e) {
+        if (e.target === modalFicha) modalFicha.close();
       });
 
-      btnClose.addEventListener("click", function () {
-        modal.close();
+      // Modal alfajor — primer item de la grilla
+      var modalAlfajor = document.getElementById("modal-alfajor");
+      var modalAlfajorImg = modalAlfajor.querySelector("img");
+      var firstWrapper = grid.firstElementChild;
+      firstWrapper.classList.add("is-clickable");
+      firstWrapper.addEventListener("click", function () {
+        modalAlfajorImg.src = firstWrapper.querySelector("img").src;
+        modalAlfajor.showModal();
       });
-
-      modal.addEventListener("click", function (e) {
-        if (e.target === modal) modal.close();
+      modalAlfajor.querySelector(".modal-close").addEventListener("click", function () {
+        modalAlfajor.close();
+      });
+      modalAlfajor.addEventListener("click", function (e) {
+        if (e.target === modalAlfajor) modalAlfajor.close();
       });
     </script>
 
