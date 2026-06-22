@@ -540,15 +540,6 @@ footer {
   /* background: var(--navy); */
 }
 
-.wrapper.is-clickable {
-  cursor: pointer;
-}
-
-.wrapper.is-clickable:hover img {
-  transform: scale(1.05);
-  transition: transform 0.2s ease;
-}
-
 @media (max-width: 900px) {
   .havanna-word {
     font-size: 54px;

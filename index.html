@@ -85,15 +85,16 @@
     </section>
 
     <!-- BANDA + VIDEO -->
-    <section class="band hidden">
+    <section class="band">
       <img src="./recursos/SVG/x.svg" alt="" />
 
       <div class="video-card">
-        <div class="video-bar">GOLES SON ALFAJORES – HAVANNA</div>
         <div class="video-frame">
           <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID"
-            title="Goles son alfajores – Havanna"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/-QDzNb6Y1O8?si=l6DO-Sx3OURoCyee"
+            title="YouTube video player"
             allow="
               accelerometer;
               autoplay;
@@ -101,7 +102,9 @@
               encrypted-media;
               gyroscope;
               picture-in-picture;
+              web-share;
             "
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
         </div>
@@ -311,7 +314,11 @@
     </dialog>
 
     <!-- MODAL ALFAJOR -->
-    <dialog id="modal-alfajor" class="modal-overlay modal-overlay--alfajor" aria-label="Ver alfajor">
+    <dialog
+      id="modal-alfajor"
+      class="modal-overlay modal-overlay--alfajor"
+      aria-label="Ver alfajor"
+    >
       <div class="modal-box modal-box--alfajor">
         <button type="button" class="modal-close" aria-label="Cerrar">
           &times;
@@ -322,6 +329,9 @@
 
     <script>
       var grid = document.getElementById("grid");
+      var modalAlfajor = document.getElementById("modal-alfajor");
+      var modalAlfajorImg = modalAlfajor.querySelector("img");
+
       for (var i = 1; i <= 15; i++) {
         var num = String(i);
         var d = document.createElement("div");
@@ -332,6 +342,12 @@
           '.png" alt="Alfajor Havanna x LEO ' +
           num +
           '" />';
+        d.addEventListener("click", (function (wrapper) {
+          return function () {
+            modalAlfajorImg.src = wrapper.querySelector("img").src;
+            modalAlfajor.showModal();
+          };
+        })(d));
         grid.appendChild(d);
       }
 
@@ -347,15 +363,7 @@
         if (e.target === modalFicha) modalFicha.close();
       });
 
-      // Modal alfajor — primer item de la grilla
-      var modalAlfajor = document.getElementById("modal-alfajor");
-      var modalAlfajorImg = modalAlfajor.querySelector("img");
-      var firstWrapper = grid.firstElementChild;
-      firstWrapper.classList.add("is-clickable");
-      firstWrapper.addEventListener("click", function () {
-        modalAlfajorImg.src = firstWrapper.querySelector("img").src;
-        modalAlfajor.showModal();
-      });
+      // Modal alfajor
       modalAlfajor.querySelector(".modal-close").addEventListener("click", function () {
         modalAlfajor.close();
       });
